@@ -21,7 +21,7 @@ function App() {
       client.put('/images/' + name,file).then(()=>{
         const url = 'https://likaiqiang-blog.oss-cn-beijing.aliyuncs.com/images/' + name
         changeUrl(url)
-        changeHtml(`<img src=${url}/>`)
+        changeHtml(`<img src=${url} alt=""/>`)
         changeMd(`![${name}](${url})`)
       })
     }
@@ -43,7 +43,7 @@ function App() {
         client.put('/images/' + name,file).then(()=>{
           const url = 'https://likaiqiang-blog.oss-cn-beijing.aliyuncs.com/images/' + name
           changeUrl(url)
-          changeHtml(`<img src=${url}/>`)
+          changeHtml(`<img alt="" src=${url}/>`)
           changeMd(`![${name}](${url})`)
         })
       }
@@ -64,9 +64,9 @@ function App() {
                 <td><input value={url} type="text" disabled readOnly
                            placeholder="Uniform Resource Locator"/>
                 </td>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <td>
                   <CopyToClipboard text={url}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="button-copy" datatype="URL">Copy</a>
                   </CopyToClipboard>
                 </td>
@@ -78,6 +78,7 @@ function App() {
                 </td>
                 <td>
                   <CopyToClipboard text={html}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="button-copy" datatype="HTML">Copy</a>
                   </CopyToClipboard>
                 </td>
@@ -90,6 +91,7 @@ function App() {
                 <td>
                   {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <CopyToClipboard text={md}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="button-copy" datatype="Markdown">Copy</a>
                   </CopyToClipboard>
                 </td>
