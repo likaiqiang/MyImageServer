@@ -3,11 +3,17 @@ import { v4 as uuidv4 } from 'uuid';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './App.css';
 const OSS = require('ali-oss');
+const {
+  REACT_APP_BUCKET,
+  REACT_APP_REGION,
+  REACT_APP_ACCESSKEYSECRET,
+  REACT_APP_ACCESSKEYID
+} = process.env
 const client = new OSS({
-  region: 'oss-cn-beijing',
-  accessKeyId: 'LTAI5tMh7amxkxfKtoEDkQqv',
-  accessKeySecret: 'LKusxdRCTGGz4o9fExj373c33mL4Ov',
-  bucket: 'likaiqiang-blog'
+  region: REACT_APP_REGION,
+  accessKeyId: REACT_APP_ACCESSKEYID,
+  accessKeySecret: REACT_APP_ACCESSKEYSECRET,
+  bucket: REACT_APP_BUCKET
 })
 
 function App() {

@@ -6,6 +6,11 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      BUCKET: ${{ secrets.BUCKET }}
+      REGION: ${{ secrets.REGION }}
+      ACCESSKEYSECRET: ${{ secrets.ACCESSKEYSECRET }}
+      ACCESSKEYID: ${{ secrets.ACCESSKEYID }}
     steps:
     - uses: actions/checkout@master
     - name: Checkout
