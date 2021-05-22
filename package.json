@@ -28,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://likaiqiang.github.io/MyImageServer",
   "eslintConfig": {
     "extends": [
       "react-app",
