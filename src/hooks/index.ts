@@ -5,12 +5,15 @@ interface Upload{
     (e:ChangeEvent<HTMLInputElement>,callback:(name:string)=>void): void
 }
 
-const {
+let {
     REACT_APP_BUCKET,
     REACT_APP_REGION,
     REACT_APP_ACCESSKEYSECRET,
     REACT_APP_ACCESSKEYID
 } = process.env
+
+REACT_APP_ACCESSKEYSECRET = atob(REACT_APP_ACCESSKEYSECRET || '')
+REACT_APP_ACCESSKEYID = atob(REACT_APP_ACCESSKEYID || '')
 
 export const useOss = ()=>{
     const client = useRef(new OSS({
