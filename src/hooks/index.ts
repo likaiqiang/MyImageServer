@@ -35,7 +35,7 @@ export const useUpload = ()=>{
     const upload =  useRef<(Upload)>((e,callback)=>{
         const files = Array.from(e.target.files || [])
         for(let file of files){
-            const {name} = file
+            const name = uuidv4() + '-' + file.name
             put.current(file,name,callback)
         }
     })
